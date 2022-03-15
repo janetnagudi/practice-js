@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2 Challenge</title>
+</head>
+<body>
+    <div>
+        <p id='one'></p>
+        <p id='one'>2</p>
+        <p id='one'>3</p>
+        <p id='one'>4</p>
+        <button onclick = 'array()'>
+            trigger function
+        </button>
+        <button id='button1'>
+            event function
+        </button>
+        <br>
+        <br>
+        <input id= "usertext" type="number"/>
+        <input id="example2" type="number"/>
+        <button onclick = 'showText()'> Add two numbers</button>
+        <p id= "showtext"></p>
+        <br>
+        <input id= "triangle1" type="number"/>
+        <input id="triangle2" type="number"/>
+        <button onclick = 'showArea()'> Area of Triangle</button>
+        <p id= "area-tri"></p>
+        <br>
+        <input id="mytable" placeholder="Choose number"/>
+        <button id = "button4" onclick = 'timesTable()'>Times Table</button>
+        <p id = "table"></p>
+
+
+        <p>My Array</p>
+        <p id="my-array"></p>
+        <p>Calculate biggest number:<span id="arraymax"></span></p>
+        <p></p>
+        <p>Sort Array Highest to Lowest: <span id="array2"></span></p>
+        <p>Reverse Array: <span id="reverse"></span></p>
+        <br>
+
+
+    </div>
+
+    <script type="text/javascript">
+
+    /*Show Text*/
+    function showText() {
+        let v = document.getElementById('usertext').value;
+        let v2 = document.getElementById('example2').value;
+
+        let text = document.querySelector('#showtext');
+        text.innerHTML = addNumber(+v,+v2);
+    }
+    const two = document.querySelectorAll('#one');
+    const one = document.getElementById('one');
+    
+    const button = document.getElementById('button1');
+
+    //array 100
+        let store = []
+    function array() {
+        for (let i=0; i <=100; i++){
+        console.log(i % 2)
+        if (i % 2) {
+            console.log(i % 2)
+            store.push(i);
+        }
+    }
+    one.innerHTML= store;
+    }
+//ascend array
+const myArray = [45, 120, 3, 173, 105, 16];
+document.getElementById("my-array").innerHTML = myArray;
+
+myArray.sort(function(a, b){return a - b});
+document.getElementById("array2").innerHTML = myArray;
+
+//Max
+document.getElementById("arraymax").innerHTML = arrayHigh(myArray);
+
+function arrayHigh(arr) {
+  return Math.max.apply(null, arr);
+}
+
+
+//Add Two Numbers
+    function addNumber(a,b) {
+        return a + b
+    }
+
+    const value = addNumber;
+    console.log(value);
+
+
+    //changes the 1st query selected id with 99
+    two[1].innerHTML = 99;
+    //then displays it as 99? No it's just selecting index 1 of the array 
+
+    console.log(two[1]);
+//Area Triangle
+function showArea() {
+        let t1 = document.getElementById('triangle1').value;
+        let t2 = document.getElementById('triangle2').value;
+
+        let area = document.querySelector('#area-tri');
+        area.innerHTML = areaTriangle(+t1,+t2);
+    }
+    function areaTriangle(t1,t2) {
+        return (t1 * t2) / 2;
+    }
+
+    const myArea = areaTriangle;
+    console.log(myArea);
+
+
+    </script>
+</body>
+
+</html>
